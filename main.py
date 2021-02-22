@@ -5,8 +5,10 @@ import argparse
 import win32gui
 from osrsbox import items_api
 
+window_name = 'Old School RuneScape'
+
 def environment():
-    window_rect = win32gui.GetWindowRect(win32gui.FindWindow(None, 'Old School RuneScape'))
+    window_rect = win32gui.GetWindowRect(win32gui.FindWindow(None, window_name))
     w = window_rect[2] - window_rect[0]
     h = window_rect[3] - window_rect[1]
 
@@ -32,7 +34,7 @@ def main():
 
     # get the window size
 
-    cap = WindowCapture('Old School RuneScape')
+    cap = WindowCapture(window_name)
 
     while True:
         last_time = time.time()
